@@ -1,34 +1,38 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react'
+import Navbar from './components/UserList'
+import Hero from './components/Hero'
+import HomeCards from './components/HomeCards'
+import Test from './components/test'
+import UserList from './components/UserList'
+import Test2 from './components/Test2'
+import Person from './components/Person'
+const App = () => {
+  const userList = [
+    {id:1, name:'pytech', age:22},
+    {id:2, name:'anuoluwapo', age:22}
+  ]
+  var result = userList.map(users => (
+    <ul key={users.id}>
+      <li>{users.id}.     {users.name}</li>
+      <li>{users.id}.     {users.name}</li>
+    </ul>
 
-function App() {
-  const [count, setCount] = useState(0)
-
+  ))
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    {/* <Test2 name='Pytech' age={22} isMarried={false} hobbies={['coding', 'sleeping', 'football']} /> */}
+
+    <Person
+     name={result}
+     
+     
+     
+     />
+      {/* <UserList /> */}
+      {/* <Hero /> */}
+      {/* <HomeCards /> */}
+      {/* <Test /> */}
+      </>
   )
 }
 
